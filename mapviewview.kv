@@ -1,0 +1,64 @@
+<Apka>:
+	search_lat: coor_lat
+	search_long: coor_long
+    my_map: map
+    pic: image
+    tekst: tekst
+	score: score
+    
+    
+    BoxLayout:
+        orientation: "vertical"
+       
+        BoxLayout:
+            orientation: "horizontal"
+            
+            BoxLayout:
+                MapView:
+					lat: 0
+					long: 0
+                    zoom: 1
+                    id: map
+                    on_touch_down: root.search_location()  
+					
+                    MarkerMapLayer:
+                        id: layer
+            BoxLayout:
+                Image:
+                    size_hint_x: 50
+                    id: image 
+    
+        
+        BoxLayout:
+            orientation: "horizontal"
+            height: "50dp"
+            size_hint_y: None
+            
+			Label:
+				text: "Twoj Wynik"
+			
+            TextInput:
+                id: tekst
+			TextInput:
+				id: score
+            
+            Button:
+                text: "Generuj Zdjecie"
+                on_press: root.zmiana_pic()
+		BoxLayout:
+			orientation: "horizontal"
+			height: "50dp"
+			size_hint_y: None
+		
+			Label:
+				text: "szerokosc"
+			Label:
+				id: coor_lat
+			Label:
+				text: "dlugosc"
+			Label:
+				id: coor_long
+			
+				
+                
+            
